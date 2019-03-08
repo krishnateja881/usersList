@@ -1,0 +1,2257 @@
+/* You can add global styles to this file, and also import other style files */
+//@import 'variables'
+@import '../node_modules/bootstrap/scss/bootstrap'
+//@import '../node_modules/font-awesome/css/font-awesome.css'
+//@import "../node_modules/mdi/css/materialdesignicons.min.css"
+
+//@import './app/common/footer/footer.component.sass'
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i')
+
+
+$body-text-color: #333
+$white-color: #fff
+$nav-link-color: #86cff3
+$nav-link-underline: #5fccff
+$gradient-blue-bg: linear-gradient(135deg, #104c99 0%, #0272d4 23%, #0272d4 45%, #083978 100%)
+$grey-color: #93abba
+$inherit-width: inherit
+$background-color: #f5f7f9
+$tab-color: #EFF9FE
+$tab-text-color: #819DAF
+$label-color: #53575D
+$link-color: #0275d8
+$under-alert-color: #FEF2E8
+$over-alert-color: #FDE8EA
+$normal-alert-color: #E5F6ED
+$font-family-montserrat: 'Montserrat'
+$font-family-roboto: 'Roboto'
+$sans-serif: sans-serif
+$green-color: #21B47F
+$red-color: #ec5150
+$dark-blue: #024e76
+$green-gradient: linear-gradient(135deg, #008676 0%, #28c17a 51%, #008676 100%)
+$blue-gradient: linear-gradient(135deg, #006cd2 0%,#009bfc 51%,#006cd2 100%)
+$red-gradient: linear-gradient(135deg, #b61e10 0%, #ec5150 51%, #b61e10 100%)
+$black: #000
+$light-grey-border-color: #dae2e7
+$grey-border-color: #c0ced7
+$light-blue: #00a9ec
+$text-danger: #d9534f
+$text-primary: #0275d8
+$text-muted: #5a7f96
+$text-danger-hover-color: #aa3429
+$text-muted-hover-color: #456e89
+$gray-lighter: #dae2e7
+
+
+.form-control::placeholder
+  color: #93abba
+
+.search-filter-input::placeholder
+  color: #93abba
+
+html
+  position: relative
+  min-height: 100%
+
+html body
+  background-color: $background-color
+  font-size: 14px
+  font-family: $font-family-roboto, $sans-serif
+  color: $body-text-color
+  min-height: 100%
+  margin-bottom: 30px
+
+
+a, input, button, text-area, .pointer
+  transition: all 0.2s linear
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-family-montserrat
+  font-weight: 600
+  letter-spacing: 0.25px
+  color: $dark-blue
+
+h5
+  font-size: 20px
+
+h6
+  letter-spacing: 3px
+  font-size: 16px
+  color: $grey-color
+  text-transform: uppercase
+  font-weight: normal
+
+button, input, optgroup, select, textarea
+  font-family: $font-family-roboto
+
+.margin-top-10
+  margin-top: 10px
+.text-success
+  color: $green-color
+
+.actions-row
+  border: 1px solid #e6e6e6
+  padding: 8px
+  border-top: none
+.view-all-less
+  text-decoration: underline
+  color: deepskyblue
+  cursor: pointer
+.navbar-light.neet-header
+  background-image: $gradient-blue-bg
+  padding: 0
+  align-items: inherit
+  padding-top: 18px
+
+  .navbar-brand
+    width: 300px
+    padding: 15px 20px
+
+    &:hover
+      background: fade_out($white-color, .9)
+  > ul.main-menu
+    > li
+      > a.nav-link
+        color: $nav-link-color
+        font-family: $font-family-montserrat
+        padding: 0 20px
+        letter-spacing: 0.5px
+        display: flex
+        align-items: center
+
+        &:hover
+          color: $white-color
+  > ul.navbar-nav
+    flex-direction: row
+    &.main-menu
+      flex-grow: 1
+      justify-content: center
+
+    > li.nav-item
+      align-items: stretch
+      display: flex
+
+    > li.active
+
+      > a
+        color: $white-color
+        position: relative
+
+        &:after
+          content: ''
+          width: calc(100% - 36px)
+          height: 6px
+          background: $nav-link-underline
+          position: absolute
+          bottom: 0
+          left: 18px
+
+    &.utility-nav
+      > li
+        > a
+          color: $white-color
+          display: flex
+          align-items: center
+          padding: 0 20px
+          letter-spacing: 0.5px
+
+          &:after
+            opacity: .5
+
+          &:hover
+            background: fade_out($white-color, .9)
+
+        &.show
+          > a
+            background: fade_out($white-color, .9)
+
+            &.dropdown-toggle::after
+              transform: rotate(180deg)
+
+        .dropdown-menu
+          border-radius: 0 0 5px 5px
+          margin: 0
+          padding: 0
+
+          .nav-link
+            color: $body-text-color
+
+            &:hover
+              background: fade_out($nav-link-color, .85)
+              color: $link-color
+
+          &.snap-right
+            left: auto
+            right: 0
+
+.navbar-brand.pointer.neet-logo-img
+  width: 120px
+  height: 100%
+.form-control
+  padding: 10px
+  font-size: 14px
+  border-color: $grey-border-color
+
+.status-select-box-width
+  width: 150px
+  display: inline-block
+
+.search-drop-down-button
+  background-color: white
+  border: none
+.search-button
+  width: 76px
+  height: 38px
+  border-bottom-left-radius: 0%
+  border-top-left-radius: 0%
+.border-none
+  border: none
+.ui-select-choices.dropdown-menu
+  display: block
+.staff-form label
+  margin-top: 10px
+.report-form
+  padding: 20px 10px
+  background-color: #FFFFFF
+  border-bottom: 1px solid $grey-border-color
+.pointer
+  cursor: pointer
+.under-criteria
+  color : #f48021
+.over-criteria
+  color : #ec1c30
+.grey-font
+  color: #a6a6a6
+.grey-font.black
+  color: #000
+.no-bottom-padding
+  padding-bottom: 0
+.no-bottom-margin
+  margin-bottom: 0
+#sort-wrapper
+  margin-left : auto
+  margin-right : auto
+#inner1
+  float : left
+  width : 0%
+#inner2
+  clear : left
+.noRecord
+  text-align: center
+  color: $grey-color
+  @extend .grey-font
+
+.readOnly
+  background-color: transparent
+.date-picker-img
+  cursor: pointer
+  color: $light-blue
+.required::after
+  content : ' *'
+  color : #C9302C
+.search-bar
+  width : 110%
+.ui-select-placeholder, .ui-select-match-text, .ui-select-match-item
+  max-width: 100%
+  padding-right: 40px
+  text-decoration: none
+  word-wrap: break-word
+  white-space: normal
+  text-align: left
+  float: none
+
+.multi-values
+  word-wrap: break-word
+  box-sizing: border-box
+
+.ui-select-multiple
+  padding: 5px !important
+
+.view-effort-form
+  margin-left: 10px
+.modal-form
+  padding: 30px
+select.report-select
+  width: 200px
+  color: #00b3ee
+  option
+    padding: 30px
+
+.selected-date-range
+  color: #719BB1
+  font-size: small
+
+ng-select.agreement-tools
+  border: none
+
+.ui-select-match-item
+  border: 1px solid #F2F5F7
+  background-color: #F2F5F7
+.error-message
+  list-style: none
+ng-select.has-error
+  border: none
+  .ui-select-container
+    border: 1px solid red
+ng-select.on-focus
+  border: none
+  .ui-select-toggle
+    border: 1px solid dodgerblue
+ng-select.no-error
+  border: none
+  .ui-select-container
+    border: 1px solid rgba(0, 0, 0, 0.15)
+span.ui-select-match::after
+  content: "\f0dd"
+  font-family: 'FontAwesome'
+  position: absolute
+  height: 5px
+  right: 15px
+  bottom: 24px
+  color: $grey-color
+
+.tab-border
+  margin: 10px
+  //overflow: hidden
+  border-bottom: 1px solid #ccc
+
+.project-edit-actions
+  margin-top: 100px
+.tag-input.tag-input-item
+  cursor: pointer
+.input-cursor-pointer
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+.nav-tabs
+  margin: 0
+
+.tab-content
+  height: inherit
+  border: 1px solid $grey-border-color
+  border-top: none
+  background-color: white
+  min-height: 400px
+  border-radius: 0 0 6px 6px
+
+  form,
+  .tab-pane
+    padding: 20px
+
+
+.width-full
+  width: 100%
+.agreement-tabs.tab-border
+  height: auto
+  background-color: white
+.color-gray
+  color: $grey-color
+
+.color-white
+  color: white
+.table tr.active td
+  background-color: #4E95F5
+  color: white
+
+td.row-click
+  cursor: pointer
+.min-height-100px
+  min-height: 100px
+.min-height-200px
+  min-height: 200px
+.remove-bullet-point
+  list-style-type: none
+.li-active
+  background-color: #4E95F5
+  color: white
+.has-error
+  border: 1px solid red
+.display-none
+  display: none
+.display-on-over
+  height: 17px
+.agreement-note-card
+
+  i
+    opacity: 0
+    transition: all 0.2s linear
+
+
+  &:hover
+    i
+      opacity: 1
+
+.font-size-12px
+  font-size: 12px
+.agreement-note-date-position
+  padding-left: 80px
+  padding-right: 1px
+.button-disabled
+  opacity: 0.65
+  cursor: not-allowed
+.on-click-display
+  display: block
+
+.spinner
+  width: 40px
+  height: 40px
+  top: 30%
+  left: 50%
+  position: fixed
+  margin: 100px auto
+  z-index: 500
+
+.projec-contacts-table tbody
+  height: 100px
+  overflow-y: scroll
+  display: block
+
+.projec-contacts-table th
+
+
+.projec-contacts-table tr
+  width: 100%
+  table-layout: fixed
+  display: inline-table
+.row-highlight
+  background-color: #EC5A5A
+  color: white
+.text-highlight
+  color: #EC5A5A
+.column-total
+  background-color: #EDEDED
+  color: black
+  font-weight: 500
+
+tr.column-total:hover
+  color: black
+
+
+tr.row-highlight:hover
+  color: black
+
+.auto-completer
+  padding: 0px
+    border: 0px
+
+.btn.btn-default.btn-secondary.form-control.ui-select-toggle
+  font-family: $font-family-roboto
+  padding: 10px
+  border: 1px solid $grey-border-color
+  display: block
+  border-radius: .25rem
+  background-color: $white
+  font-weight: normal
+  letter-spacing: 0
+
+  i
+    font-size: 16px
+    color: darken($light-grey-border-color, 10%)
+
+  .ui-select-placeholder
+    float: none
+
+.completer-holder
+  .completer-input
+    display: block
+    width: 100%
+    padding: 10px 0
+    border: none
+
+.completer-holder input:focus
+  outline: none
+
+.inputField
+  flex: 1
+.ng-invalid[required]
+  &.ng-touched[required]
+    border: 1px solid red
+
+.page-header
+  display: flex
+  align-items: center
+  background: $white-color
+  border-bottom: 1px solid $grey-border-color
+  padding: 10px 20px
+  min-height: 62px
+
+  .page-title
+    flex-grow: 1
+    display: flex
+    align-items: center
+
+    h2
+      font-family: $font-family-montserrat
+      font-size: 1.4rem
+      color: $dark-blue
+      font-weight: 700
+      margin-bottom: 0
+
+    .badge
+      font-weight: bold
+      background: #93abba
+      margin-left: 15px
+      padding: 5px 10px
+      font-size: 100%
+
+.btn
+  border-radius: 100px
+  padding: 5px 25px
+  font-family: $font-family-montserrat
+  font-weight: 600
+  display: flex
+  align-items: center
+  font-size: 14px
+  letter-spacing: 0.5px
+  border: none
+
+  i
+    font-size: 24px
+
+
+.header-label-div
+  .active
+    color: white
+    text-decoration: none
+.header-label-link
+  color: white
+  font-size: 30px
+  font-weight: bold
+  border: solid
+  border-color: #00b3ee
+  border-top: none
+  border-bottom: none
+  border-left: none
+  border-width: 1px
+  font-family: $font-family-montserrat, $sans-serif
+
+.sub-header-label
+  color: #00b3ee
+.sub-header-sub-data-label
+  color: #00b3ee
+
+
+.tab-count-div
+  border:  1px solid rgba(0, 0, 0, 0.15)
+  border-color: $light-blue
+  background: $white-color
+  color: $light-blue
+  width: 35px
+  height: 35px
+  border-radius: 100%
+  line-height: 33px
+  text-align: center
+  display: inline-block
+  margin-right: 20px
+  opacity: .65
+
+.client-total-count-div
+  border-width: 1px
+  border: solid
+  border-color: $tab-text-color
+  background-color: $tab-text-color
+  color: #EBEFF2
+  width: 43px
+  height: 25px
+  border-radius: 50px
+.menu-item-div
+  max-height: 557px
+  overflow-y: auto
+  overflow-x: hidden
+.side-menu-div
+  background-color: $background-color
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-top: none
+.client-side-menu-item
+  padding-left: 33px
+.client-side-menu-item:hover
+  background-color: $tab-color
+.client-side-menu-name-label
+.client-side-menu-contact-label
+.each-client-details-div
+  background-color: $background-color
+  height: calc(100vh - 160px)
+  overflow-y: auto
+  overflow-x: hidden
+
+.client-details-mobile-no-div
+  border: solid
+  border-width: 1px
+  border-color: lightgrey
+  border-top: none
+  border-bottom: none
+  border-left: none
+.padding-top-200px
+  padding-top: 200px
+
+.simple-tabs
+  margin-top: 20px
+  box-shadow: inset 0 -1px 0 $grey-border-color
+  list-style: none
+
+  > li
+    display: inline-block
+    padding: 0 10px
+    font-family: $font-family-montserrat
+    letter-spacing: 0.25px
+
+    .simple-tab
+      display: flex
+      align-items: center
+      box-shadow: 0 -4px 0 0 transparent inset
+      padding: 10px 0
+
+    .count
+      border: 1px solid rgba(0, 0, 0, 0.15)
+      border-radius: 50px
+      background: $white
+      min-width: 32px
+      padding: 2px 10px
+      text-align: center
+      margin-left: 10px
+      font-family: $font-family-roboto
+
+    &.client-project-agreement-tab-active
+      .simple-tab
+        box-shadow: 0 -4px 0 0 #00b3ee inset
+        color: #00b3ee
+
+.border-radious-50px
+  border-radius: 50px
+.project-management-div
+.project-heading-div
+.project-body-div
+  background-color: $background-color
+.action-table
+  width: 100%
+  background-color: white
+  border-width: 1px
+.table-header
+  background-color: #f2f5f7
+  .heading-text-color
+    color: #043c60
+.client-search-menu
+  border: 2px solid rgba(0, 0, 0, 0.15)
+  border-top: none
+  border-left: none
+  margin-top: 1px
+.ACTIVE
+  color: #009145
+.PENDING
+  color: #f6921e
+.CLOSED
+  color: #ec1c30
+.INACTIVE
+  color: #849fb1
+table
+  border: 1px solid $grey-border-color
+  border-radius: 6px
+
+.table
+
+  tbody
+    i
+      font-size: 24px
+
+      &.mdi-close,
+      &.mdi-check
+        color: $grey-color
+
+
+  tr
+    transition: all 0.2s linear
+
+    &.pointer
+      &:hover
+        background: fade_out($light-blue,.95)
+
+  thead
+    th
+      border-bottom: 1px solid $grey-border-color
+      border-top: 1px solid $grey-border-color
+      vertical-align: middle
+      line-height: 17px
+
+      &:last-child
+        border-right: 1px solid $grey-border-color
+
+  .display-on-over
+    i
+      font-size: 24px
+      opacity: 0
+      transition: all 0.2s linear
+  tr:hover
+    .display-on-over
+      i
+        opacity: 1
+
+.card
+  border-color: $grey-border-color
+  //border-radius: 6px
+  border-radius: 0rem
+
+  .card-heading
+    padding: 20px
+    background-color: darken($background-color, 1%)
+    border-radius: 1px 1px 0 0
+    color: $dark-blue
+    font-weight: 600
+    font-family: $font-family-montserrat
+    letter-spacing: 0.5px
+    border-bottom: 1px solid $grey-border-color
+
+  .card-block
+    padding: 0 20px
+
+    > .row
+      padding: 20px 0
+      margin: 0
+      border-bottom: 1px solid $light-grey-border-color
+      display: flex
+      align-items: center
+
+      > [class^="col-md-"],
+      > [class*="col-md-"]
+        padding: 0
+      > .label
+        margin-bottom: 0
+      &:last-child
+        border-bottom: none
+
+
+  &.edit-mode
+
+    .card-block
+
+      > .row
+        padding: 10px 0
+
+.form-group
+  label,
+  .value
+    margin-bottom: .5rem
+    margin-top: .5rem
+
+.text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+.neet-modal
+  border-radius: 50px
+.neet-modal-header
+  background-color: $background-color
+  border-radius: 9px 9px 0 0
+.neet-modal-sub-header
+  padding: 15px
+.text-decuration-none
+  text-decoration: none
+.nav-tabs
+  justify-content: space-around
+  .nav-item
+    width: 100%
+    text-align: center
+
+    .nav-link
+      background-color: #E5EBEF
+      border: solid
+      border-width: 1px
+      border-color: $grey-border-color
+      border-radius: inherit
+      color: fade_out($dark-blue, .45)
+      font-family: $font-family-montserrat
+      letter-spacing: 0.25px
+      border-right-width: 0
+
+      &:hover
+        background: fade_out(#E5EBEF, .5)
+        color: $dark-blue
+
+      &.active
+        color: $dark-blue
+        background: white
+        border-bottom-color: $white
+    &:last-child
+      .nav-link
+        border-right-width: 1px
+
+    .tab-count-div
+      background-color: #00b3ee
+      color: white
+.project-agreement-heading-div
+  margin-right: -10px
+  margin-left: -10px
+  padding-bottom: 15px
+.font-1-rem
+  font-size: 1rem
+//.dropdown-menu
+//  font-size: 0.85rem
+.div-vertical-scroll
+  height: 338px
+  overflow-y: auto
+  overflow-x: hidden
+.height-450px
+  height: 440px
+.agrimeent-footer-div
+  border: solid
+  border-width: 1px
+  border-color: gainsboro
+  border-bottom: none
+  border-left: none
+  border-right: none
+.tag-control.ng2-tag-input-focus
+  .ng2-tag-input-field[_ngcontent-urx-20]
+    border: none
+    box-shadow: none
+    width: 100%
+.disclaimer-description-text-area
+  background-color: white
+  display: block
+  width: 100%
+  line-height: 1.25
+  color: #464a4c
+  background-image: none
+  background-clip: padding-box
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+  padding: 0.5rem 0.5rem
+  font-size: 0.85rem
+  border: 1px solid rgba(0, 0, 0, 0.15)
+
+.step
+  color: #C5D2DA
+  font-weight: 600
+.border-rt-1
+  border-right: 1px solid #C5D2DA
+.report-div
+  background-color: #FFFFFF
+  font-size: 15px
+  label
+    font-weight: 600
+.report-button
+  background-color: $green-color
+  color: #fff
+  border-radius: 25px
+
+.btn-success,
+.btn-primary,
+.btn-danger
+  transition: 0.5s
+  background-size: 200% auto
+  background-position: right center
+  color: #fff !important
+  &:hover,
+  &:active,
+  &:focus
+    background-position: left center
+    color: $white-color
+
+
+
+.btn-success
+  background-image: $green-gradient
+  &:hover,
+  &:active,
+  &:focus
+    background-image: $green-gradient
+    box-shadow: 0 3px 10px fade_out($green-color, .5)
+
+.btn-primary
+  background-image: $blue-gradient
+  &:hover,
+  &:active,
+  &:focus
+    background-image: $blue-gradient
+    box-shadow: 0 3px 10px fade_out($light-blue, .5)
+
+.btn-danger
+  background-image: $red-gradient
+  &:hover,
+  &:active,
+  &:focus
+    background-image: $red-gradient
+    box-shadow: 0 3px 10px fade_out($red-color, .5)
+
+.btn-link
+  font-family: $font-family-roboto
+  border-radius: 0
+  font-weight: 500
+  letter-spacing: 0
+  padding: 3px 15px
+
+  &:hover
+    text-decoration: none
+    transform: scale(1.05)
+
+  i
+    opacity: .5
+
+  &.text-primary
+    &:hover
+      color: $light-blue !important
+  &.text-danger
+    &:hover
+      color: $text-danger-hover-color !important
+  &.text-muted
+    &:hover
+      color: $text-muted-hover-color !important
+
+.utility-nav
+
+  .btn-link
+    &:hover
+      transform: scale(1)
+
+.text-default
+  color: darken($grey-color, 20%)
+
+form
+  .text-danger
+    span
+      margin-top: 7px
+      display: block
+
+.input-group
+  width: 165px
+
+  .input-group-addon
+    background: white
+    transition: all 0.2s linear
+
+    &:hover
+      background: fade_out($light-blue, .95)
+  .form-control
+    border-right: none
+
+    + .input-group-addon
+      &:not(:first-child)
+        border-left: 1px solid $grey-border-color
+
+.ui-select-multiple
+  .ui-select-match
+    .ui-select-match-item[type="button"]
+      background-color: #f2f5f7
+      display: inline-block
+      padding: 5px 10px
+      border-radius: 5px
+      border: 1px solid $grey-border-color
+      -webkit-appearance: inherit
+      font-family: $font-family-roboto
+      font-weight: normal
+      letter-spacing: 0
+      margin: 0 2px 5px 0 !important
+
+      .close
+        font-weight: normal
+        font-size: 24px
+        vertical-align: middle
+        color: darken($grey-border-color, 30%)
+        margin-left: 10px !important
+.tag-input-div
+  tag-input
+    &.form-control
+      box-shadow: none !important
+      padding: 5px
+      .ng2-tag-input-field
+        padding: 5px
+        width: 100%
+
+      &.ng2-tag-input-focus
+        padding: 0
+
+        .ng2-tag-input-field
+          padding: 10px
+          height: auto
+          outline: 0
+          background: transparent
+
+      tag-input-item
+        background-color: #f2f5f7
+        display: inline-block
+        padding: 5px 10px
+        border-radius: 5px
+        border: 1px solid $grey-border-color
+        -webkit-appearance: inherit
+        font-family: $font-family-roboto
+        font-weight: normal
+        letter-spacing: 0
+        line-height: .8
+
+        .ng2-tag-input-remove
+          font-weight: normal
+          font-size: 24px
+          vertical-align: middle
+          color: darken($grey-border-color, 30%)
+          margin-left: 5px !important
+          opacity: .5
+          transition: all 0.2s linear
+
+          &:hover
+            opacity: 1
+
+.btn-md
+  padding: 10px 25px
+
+.btn-sm
+  padding: 10px 25px
+  width: 102.2px
+  height: 41px
+
+.btn-wrapper
+  display: flex
+  align-items: center
+  justify-content: flex-end
+
+.flex
+  display: flex
+  align-items: center
+
+.flex-grow
+  flex-grow: 1
+
+.flex-end
+  justify-content: flex-end
+
+.button-color-white
+  background-color: white
+  background-image: none !important
+  color: $green-color !important
+  border: 1px solid $grey-border-color
+  padding: 0 25px 0 15px !important
+
+  &:hover,
+  &:active,
+  &:focus
+    background-color: $green-color
+    border: 1px solid $green-color
+    box-shadow: none
+    color: $white !important
+
+.input-group-addon
+  padding: 0
+  border-color: $grey-border-color
+
+  i
+    padding: 3px 10px
+
+.margin-left-40px
+  margin-left: 40px
+
+.staff-tag-div
+  .ui-select-container
+
+.ui-select-container
+  .ui-select-match-item
+    span
+      font-size: 0.85rem
+
+.agreement-table thead tr th:last-child
+  min-width: 65px
+.agreement-table
+  .table th, .table td:nth-child(-1)
+    padding-left: 5px
+    padding-right: 5px
+    padding-top: 10px
+    padding-bottom: 10px
+
+.agreement-table thead tr td
+  .ui-select-container
+    .form-control
+      width: 0px
+.agreement-table
+
+  th,
+  td
+    padding: 10px 5px
+
+  .ui-select-toggle
+    min-width: 120px
+
+    i
+      float: none
+      position: absolute
+      right: 10px
+      top: 9px
+
+  .ui-select-match
+    max-width: 160px
+
+    .ui-select-match-text
+      padding-right: 20px
+
+    .ui-select-placeholder
+      padding: 0
+      white-space: nowrap
+
+  input[type=number]
+    max-width: 60px
+  select
+    min-width: 60px
+    padding: 5px
+  .input-group
+    width: 155px
+
+.estimate-table thead tr th:last-child
+  min-width: 100px
+.estimate-table
+  //font-size: 12px
+  //.form-control
+      font-size: 12px
+  .input-group
+    width: 180px
+  input.form-control[type=number]
+    width: 75px
+tag-input-item
+  margin-top: 2px
+  margin-bottom: 2px
+  margin-left: 2px
+.tag-input-div
+  .ng2-tag-input-focus
+    margin-top: 1px
+    margin-bottom: 0px
+    padding: 0px
+    max-height: 100%
+    box-shadow: none
+    input
+      width: 100%
+      padding-left: 5px
+      height: 30px
+      margin-top: 1px
+.border-top-div
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-bottom: none
+  border-left: none
+  border-right: none
+  margin-top: 16px
+  border-color: $label-color
+.month-circle
+  margin-top: -9px
+.effort-table th
+  background-color: white
+  color: #000 !important
+.effort-table
+  .table
+    border-right: none
+    border-left: none
+    border-top: none
+
+    th,
+    td
+      vertical-align: middle
+      padding-top: 8px
+      padding-bottom: 8px
+      padding-right: 4px
+      padding-left: 20px
+      max-width: 75px
+      white-space: normal
+      word-wrap: break-word
+
+    th
+      border-top: none
+
+
+.table th, .table td
+  vertical-align: middle
+.popover.popover-bottom::after
+  border-bottom-color: white
+.arrow-circle
+  margin-top: -10px
+  outline: none
+  font-size: 25px
+.arrow-circle:hover
+  color: #00b3ee
+.tab-text-color
+  color: $label-color
+.bottom-border
+  border-bottom: 1px solid $grey-border-color
+.ui-select-match-item
+  background-color: $background-color
+  padding-right: 19px
+.under-criteria-background
+  background-color: $under-alert-color !important
+.over-criteria-background
+  background-color: $over-alert-color !important
+.normal-criteria-background
+  background-color: $normal-alert-color !important
+.large-modal
+  .modal-lg
+    max-width: 930px
+.no-account-size
+  font-size: 100px
+  color: fade_out($grey-color, .5)
+
+.no-account-title
+  margin-top: -27px
+.icon-style
+  color: #B3C4CF
+  font-size: 25px
+.heading-text-color
+  color: $dark-blue
+#style-2::-webkit-scrollbar-track
+
+  border-radius: 10px
+  background-color: #F5F5F5
+#style-2::-webkit-scrollbar
+  width: 12px
+  background-color: #F5F5F5
+#style-2::-webkit-scrollbar-thumb
+  border-radius: 10px
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color: #F2F2F2
+.client-search-menu .index-search-form
+  width: 416px
+.agreement-tabs
+  .tab-pane
+    padding: 0
+  ul.nav-tabs
+    width: 100%
+    li.nav-item
+      width: 25%
+      text-align: center
+
+      .nav-link
+        padding: 20px 0px
+        font-size: 15px
+        font-family: $font-family-montserrat
+        letter-spacing: 0.25px
+        border-color: $grey-border-color
+        border-right-width: 0
+
+        .tab-count-div
+          background: $white
+          color: $light-blue
+
+        &.active
+          color: $dark-blue
+          font-weight: normal
+          border-bottom-color: white
+
+          .tab-count-div
+            opacity: 1
+            background: $light-blue
+            color: $white
+
+
+      &:first-child
+        .nav-link
+          border-radius: 6px 0 0 0
+
+      &:last-child
+        .nav-link
+          border-radius: 0 6px 0 0
+          border-right-width: 1px
+
+
+
+.notification-link
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-right: none
+  border-left: none
+
+.home-notification-div
+  min-height: 60px
+  padding: 10px 20px
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+  transition: all 0.2s linear
+  display: flex
+  align-items: center
+
+  .redirection-link
+    opacity: 0
+    transition: all 0.2s linear
+
+  &:last-child
+    border-bottom: none
+
+.home-notification-div:hover
+  background-color: $tab-color
+
+  .redirection-link
+    opacity: 1
+
+.details
+  height: calc(100vh - 158px)
+  overflow: hidden
+  background-color: #f5f7f9
+  display: flex
+  justify-content: center
+
+  .details-container
+    padding: 20px
+
+.details-container
+  padding: 20px
+  overflow-y: auto
+  height: 100%
+  width: 100%
+
+  .details-header
+    display: flex
+    align-items: center
+
+    h4
+      flex-grow: 1
+      margin-bottom: 0
+
+    .actions
+      display: flex
+      padding: 5px 0
+      align-items: center
+
+      .btn-link
+
+        padding: 0 25px
+
+        &:hover
+          transform: scale(1.05)
+
+.divider-vertical
+  border-right: 1px solid $grey-border-color
+  min-height: 20px
+
+.effort-timeline
+  color: fade_out($dark-blue, .4)
+  letter-spacing: 2px
+  font-weight: bold
+  font-family: $font-family-montserrat
+  position: relative
+
+  i
+    color: darken($light-grey-border-color, 10%)
+
+  &:after
+    content: ''
+    position: absolute
+    right: 15px
+    left: 15px
+    bottom: 11px
+    border-bottom: 1px solid darken($light-grey-border-color, 10%)
+
+  .timeline-nav
+    position: absolute
+    bottom: -3px
+    background: white
+    width: 30px
+    height: 30px
+    text-align: center
+    border-radius: 100%
+    border: 1px solid darken($light-grey-border-color, 10%)
+    line-height: 29px
+    transition: all 0.2s linear
+    z-index: 1
+
+    &.prev
+      left: 0
+    &.next
+      right: 0
+
+    &:hover
+      color: white
+      border-color: $light-blue
+      background: $light-blue
+
+.effort-months
+  .card-heading
+    font-weight: normal
+
+    .effort-status
+      font-family: $font-family-roboto
+      font-size: 13px
+      letter-spacing: 0
+      font-style: italic
+
+  .btn-wrapper
+    margin: 10px 20px
+
+
+
+.ui-select-choices-row
+
+  &.active
+    > a
+      background-color: $light-blue !important
+
+    &:hover
+      background-color: $light-blue !important
+.modal-header
+  .close
+    font-weight: normal
+    font-size: 36px
+    line-height: 26px
+.label
+  font-weight: bold
+
+.form-check-label
+  font-weight: normal
+
+.form-check-input
+  margin-left: 0
+  margin-right: .25em
+
+.search-drop-down-button
+  display: none
+.sidebar
+  .sidebar-container
+    border-right: 1px solid $grey-border-color
+    border-left-width: 4px
+    .list-filter
+      background: $white-color
+      border-bottom: 1px solid $light-grey-border-color
+
+      .index-search-form
+
+        .dropdown
+          &.search-filter
+
+            display: flex
+            align-items: center
+            border: none
+            border-radius: 0
+            height: 50px
+
+            i
+              padding: 0 10px 0 20px
+
+            .completer-input
+              padding: 15px 0
+
+
+    .list-container
+      height: calc(100vh - 187px)
+      overflow: hidden
+      background-color: darken($background-color, 2%)
+
+      > .list-wrapper
+        list-style: none
+        padding: 0
+        margin: 0
+        width: 100%
+        overflow-y: auto
+        max-height: 100%
+        background: $white-color
+
+        > .list-item
+          border-bottom: 1px solid $light-grey-border-color
+          padding: 10px 20px
+
+          &:hover
+            background-color: fade_out($light-blue, .95)
+
+          .text-muted
+            opacity: 0.65
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+            max-width: 100%
+
+          &.list-item-active
+            background-color: $background-color
+            box-shadow: -4px 0 0 $light-blue inset
+
+
+.deselected
+  position: absolute
+  top: 50%
+  left: 50%
+  color: #d5dee4
+  transform: translateY(-50%) translateX(-50%)
+
+
+  > div
+    color: darken(#d5dee4, 15%)
+
+
+.mdi-124px
+  font-size: 124px
+  line-height: 124px
+
+.mdi-36px:before
+  line-height: 36px
+
+.go-back-arrow
+  color: $text-primary
+  transition: all 0.2s linear
+
+  &:hover
+    color: $light-blue
+flash-messages
+  .alert
+    border-radius: 0
+    border-left: none
+    border-right: none
+    border-top: none
+    margin: 0 -15px
+    border-color: $grey-border-color
+.tab-pane
+  flash-messages
+    .alert
+      border-radius: 5px
+      border-top: 1px solid $grey-border-color
+      border-right: 1px solid $grey-border-color
+      border-left: 1px solid $grey-border-color
+      margin: 0
+.alert
+  p
+    margin-bottom: 0
+    text-align: center
+
+  i
+    vertical-align: -4px
+
+.alert-info
+  color: $dark-blue
+.alert-success
+  color: darken($green-color, 20%)
+.alert-danger
+  color: darken($red-color, 30%)
+.alert-warning
+  color: #333333
+  border-color: $grey-border-color
+
+
+label
+  font-weight: bold
+
+/*---------- SPACING ----------
+
+/* Padding Zero
+
+.p0
+  padding: 0 !important
+
+/* Padding Top
+
+.pt10
+  padding-top: 10px !important
+
+.pt15
+  padding-top: 15px !important
+
+.pt20
+  padding-top: 20px !important
+
+.pt30
+  padding-top: 30px !important
+
+.pt40
+  padding-top: 40px !important
+
+.pt50
+  padding-top: 50px !important
+
+.pt60
+  padding-top: 60px !important
+
+.pt70
+  padding-top: 70px !important
+
+.pt80
+  padding-top: 80px !important
+
+.pt90
+  padding-top: 90px !important
+
+.pt100
+  padding-top: 100px !important
+
+.pt110
+  padding-top: 110px !important
+
+.pt120
+  padding-top: 120px !important
+
+.pt130
+  padding-top: 130px !important
+
+.pt140
+  padding-top: 140px !important
+
+/* Padding Bottom
+
+.pb0
+  padding-bottom: 0px !important
+
+.pb10
+  padding-bottom: 10px !important
+
+.pb15
+  padding-bottom: 15px !important
+
+.pb20
+  padding-bottom: 20px !important
+
+.pb30
+  padding-bottom: 30px !important
+
+.pb40
+  padding-bottom: 40px !important
+
+.pb50
+  padding-bottom: 50px !important
+
+.pb60
+  padding-bottom: 60px !important
+
+.pb70
+  padding-bottom: 70px !important
+
+.pb80
+  padding-bottom: 80px !important
+
+.pb90
+  padding-bottom: 90px !important
+
+.pb100
+  padding-bottom: 100px !important
+
+.pb110
+  padding-bottom: 110px !important
+
+.pb120
+  padding-bottom: 120px !important
+
+.pb130
+  padding-bottom: 130px !important
+
+.pb140
+  padding-bottom: 140px !important
+
+/* Padding Left
+
+.pl0
+  padding-left: 0px !important
+
+.pl3
+  padding-left: 3px !important
+
+.pl5
+  padding-left: 5px !important
+
+.pl10
+  padding-left: 10px !important
+
+.pl20
+  padding-left: 20px !important
+
+.pl30
+  padding-left: 30px
+
+.pl40
+  padding-left: 40px
+
+.pl50
+  padding-left: 50px
+
+.pl60
+  padding-left: 60px
+
+.pl70
+  padding-left: 70px
+
+.pl80
+  padding-left: 80px
+
+.pl90
+  padding-left: 90px
+
+.pl100
+  padding-left: 100px
+
+/* Padding Right
+
+.pr0
+  padding-right: 0px !important
+
+.pr5
+  padding-right: 5px !important
+
+.pr10
+  padding-right: 10px !important
+
+.pr20
+  padding-right: 20px !important
+
+.pr30
+  padding-right: 30px !important
+
+.pr40
+  padding-right: 40px
+
+.pr50
+  padding-right: 50px
+
+.pr60
+  padding-right: 60px
+
+.pr70
+  padding-right: 70px
+
+.pr80
+  padding-right: 80px
+
+.pr90
+  padding-right: 90px
+
+.pr100
+  padding-right: 100px
+
+.pr110
+  padding-right: 110px
+
+.pr120
+  padding-right: 120px
+
+@media (min-width: 1200px)
+  .pl-lg-50
+    padding-left: 50px
+  .pl-lg-80
+    padding-left: 80px
+
+@media (min-width: 992px)
+  .pt-md-50
+    padding-top: 50px
+
+/* Margin Auto
+
+.mr-auto
+  margin: auto
+  float: none
+
+/* Margin Zero
+
+.m0
+  margin: 0 !important
+
+/* Margin Top
+
+.mt0
+  margin-top: 0 !important
+
+.mt2
+  margin-top: 2px !important
+
+.mt5
+  margin-top: 5px !important
+
+.mt10
+  margin-top: 10px !important
+
+.mt20
+  margin-top: 20px !important
+
+.mt30
+  margin-top: 30px !important
+
+.mt40
+  margin-top: 40px !important
+
+.mt50
+  margin-top: 50px !important
+
+.mt60
+  margin-top: 60px !important
+
+.mt70
+  margin-top: 70px !important
+
+.mt80
+  margin-top: 80px !important
+
+.mt90
+  margin-top: 90px !important
+
+.mt100
+  margin-top: 100px !important
+
+.mt110
+  margin-top: 110px !important
+
+.mt120
+  margin-top: 120px !important
+
+/* Margin Bottom
+
+.mb0
+  margin-bottom: 0 !important
+
+.mb5
+  margin-bottom: 5px !important
+
+.mb10
+  margin-bottom: 10px !important
+
+.mb15
+  margin-bottom: 15px !important
+
+.mb20
+  margin-bottom: 20px !important
+
+.mb30
+  margin-bottom: 30px !important
+
+.mb40
+  margin-bottom: 40px !important
+
+.mb50
+  margin-bottom: 50px
+
+.mb60
+  margin-bottom: 60px
+
+.mb70
+  margin-bottom: 70px
+
+.mb80
+  margin-bottom: 80px
+
+.mb90
+  margin-bottom: 90px
+
+.mb100
+  margin-bottom: 100px
+
+.mb110
+  margin-bottom: 110px
+
+.mb120
+  margin-bottom: 120px
+
+/* Margin Left
+
+.ml0
+  margin-left: 0 !important
+
+.ml7
+  margin-left: 7px !important
+
+.ml15
+  margin-left: 5px
+
+.ml10
+  margin-left: 10px
+
+.ml20
+  margin-left: 20px
+
+.ml30
+  margin-left: 30px
+
+.ml40
+  margin-left: 40px
+
+.ml50
+  margin-left: 50px
+
+.ml60
+  margin-left: 60px
+
+.ml70
+  margin-left: 70px
+
+.ml80
+  margin-left: 80px
+
+.ml90
+  margin-left: 90px
+
+.ml100
+  margin-left: 100px
+
+.ml110
+  margin-left: 110px
+
+/* Margin Right
+
+.mr0
+  margin-right: 0 !important
+
+.mr5
+  margin-right: 5px !important
+
+.mr7
+  margin-right: 7px !important
+
+.mr10
+  margin-right: 10px !important
+
+.mr18
+  margin-right: 18px !important
+
+.mr20
+  margin-right: 20px !important
+
+.mr30
+  margin-right: 30px !important
+
+.mr40
+  margin-right: 40px !important
+
+.mr50
+  margin-right: 50px !important
+
+.mr60
+  margin-right: 60px !important
+
+.mr70
+  margin-right: 70px !important
+
+.mr80
+  margin-right: 80px !important
+
+.mr90
+  margin-right: 90px !important
+
+.mr100
+  margin-right: 100px
+
+.mr110
+  margin-right: 110px
+.list-filter
+  .reset-div
+    padding-left: 0px
+    opacity: .5
+
+.mdi-10px
+  font-size: 10px
+
+.utility-nav
+
+  .mdi-bell
+    position: relative
+
+    .notification-signal
+      box-shadow: 0 0 0 1.5px white
+      width: 7px
+      border-radius: 100%
+      top: 9px
+      left: 16px
+      background-color: $text-danger
+      height: 7px
+      position: absolute
+      display: block
+
+.btn.disabled,
+.btn:disabled
+  cursor: not-allowed
+  opacity: .5
+  background-image: none
+  background-color: #999
+
+  &:hover
+    box-shadow: none
+
+
+.disabled-input
+  cursor: not-allowed
+  opacity: .5
+  background-image: none
+  background-color: white
+  pointer-events: none
+  text-decoration: none
+  color: black
+
+.notifications-dropdown
+  .notification-header
+    font-family: $font-family-montserrat
+    color: $dark-blue
+    padding: 10px 15px
+    cursor: default
+    border-bottom: 1px solid $grey-border-color
+
+    .notification-signal
+      min-width: 22px
+      border-radius: 100px
+      line-height: 22px
+      color: white
+      background-color: #d9534f
+      height: 22px
+      font-size: 12px
+      display: inline-block
+      text-align: center
+      font-style: normal
+      font-weight: bold
+      padding: 0 3px
+      margin-left: 10px
+      font-family: $font-family-roboto
+      vertical-align: 1px
+
+  .notification-item
+    border-bottom: 1px solid $light-grey-border-color
+
+    .nav-link
+      padding: 5px 15px
+      .color-gray
+        display: block
+
+    &:last-child
+      border-bottom: none
+
+
+.unviewed-notification
+  background-color: #fffcee
+
+.notification-content
+  overflow: hidden
+
+  .notifications
+    list-style: none
+    padding: 0
+    margin: 0
+    width: 100%
+    overflow-y: auto
+    max-height: 100%
+
+.notification-menu-toggle
+  .dropdown-menu
+    width: 293px
+
+.on-viewed-notification-link
+  max-height: 279px
+  overflow-y: auto
+  overflow-x: hidden
+.notification-view-all-link
+  border-top: 1px solid $grey-border-color
+
+  a
+
+    display: block
+
+    i
+      vertical-align: -4px
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type="number"]
+  -moz-appearance: textfield
+
+.search-filter-input
+  border: none
+  padding-left: 0
+
+.font-weight-bold
+  font-weight: bold
+.top-border
+  border-top: 1px solid $gray-lighter
+.right-border
+  border-right: 1px solid $gray-lighter
+.fringe-table
+  .table thead tr th
+    max-width: 100px
+.word-wrap
+  white-space: normal
+  word-wrap: break-word
+a.signout-link
+  border-top: 2px solid #024e76
+//.ui-select-match
+  padding: 0.40em 0em
+  .ui-select-toggle:hover
+    background-color: white
+  .ui-select-toggle:focus
+    outline: none
+    box-shadow: none
+  .dropdown-toggle
+    width: 100%
+    cursor: pointer
+  .dropdown-toggle::after
+    float: right
+    cursor: pointer
+.disabled
+  cursor: not-allowed
+  opacity: .5
+  background-image: none
+  background-color: #999
+.label-header
+  padding-right: 33px
+  padding-top: 32px
+  color: white
+.test
+  .col-md-offset-4
+    display: block
+    height: 100% !important
+//margin-left: auto !important
+    //margin-right: auto !important
+#parent
+  display: table
+  width: 100%
+  margin-top: 150px
+
+#form_login
+  display: table-cell
+  vertical-align: middle
+  margin: auto
+//@media screen and (min-width: 1024px)
+
+
+.list-filter
+  .form-control
+    border-left-width: 4px
+.viewContainer
+  height: calc(94vh - 158px)
+  overflow-y: auto
+
+.dropdown:hover .dropdown-menu
+  display: block
+
+.dropdown-menu.snap-right
+  position: absolute !important
+  padding: 14px 16px !important
+  width: 148px
+  min-width: 0rem
+  margin-left: 10px
+
+.card-header.active
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important
+
+.card-header
+  border-bottom: none !important
+
+.loader
+  position: fixed
+  opacity: 3
+  z-index: 1200
+  height: 2em
+  width: 2em
+  //overflow: show
+  margin: auto
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+
+.loader
+  border: 4px solid  #0275d8 /* blue */
+  border-top: 4px solid #f3f3f3 /* light grey */
+  border-radius: 50%
+  width: 60px
+  height: 60px
+  animation: spin 4s linear infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+.headerMargin
+  margin-bottom: 37px
+
+.fileuploads
+  border-style: dashed
+  padding-top: 100px
+  overflow-y: auto
+.uploadIcon
+  color: red
+.uploadIconSuccess
+  color: green
+.fileload
+  padding-bottom: 53px
+  padding-left: 66px
+.drop-zone
+  width: 796px
+  height: 252px
+  left: 20%
+  margin-left: -13%
+  border: 2px dashed rgba(0,0,0,.3)
+  border-radius: 20px
+  text-align: center
+  position: relative
+  line-height: 180px
+  color: rgba(0,0,0,.3)
+  background-color: white
+  .drop-zone-text
+    font-size: 15px
+    color: #024867
+    font-weight: bolder
+    position: absolute
+    width: 190%
+    display: inline-block
+    right: -42%
+.file-imported
+  line-height: 90px
+
+
+.drop-zone input
+  /*Important*/
+  position: absolute
+  /*Important*/
+  cursor: pointer
+  left: 0px
+  top: 0px
+  width: 100px
+  /*Important */
+  opacity: 0
+
+/*Important*/
+.drop-zone.mouse-over
+  border: 2px dashed rgba(0,0,0,.5)
+  color: rgba(0,0,0,.5)
+
+/*If you dont want the button*/
+.clickHere
+  position: absolute
+  cursor: pointer
+  left: 50%
+  top: 50%
+  margin-left: -50px
+  margin-top: 10px
+  line-height: 26px
+  color: white
+  font-size: 12px
+  width: 100px
+  height: 26px
+  font-weight: bolder
+  background-color: #00AEEF
+
+.clickHere:hover
+  background-color: darken(#00aeef, 7%)
+
+.progress-bar
+  height: 8px
+  width: 100%
+
+.import-samples
+  padding-left: 25px
+  padding-right: 0px
+
+.file-icon
+  color: #cfd9e2
+.pl-7px
+  padding-left: 7px
+.file-close
+  cursor: pointer
+.tooltip-top
+  pointer-events: none
+.copy-icon-btn
+  width: 48px
+
+.flex-row
+  outline: none
+.tab-span
+  outline: none
+.progress-bar-style
+  right: 100px
+  padding-left: 0px
+  padding-right: 0px
+.modal-body
+  left: 51px
+.button-center
+  margin-left: 25px
+.download-sample
+  margin-left: 5px
+.error-list
+  margin-left: 6%
+span.mat-checkbox-label
+  font-weight: initial
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background
+  background-color: #ced4da
+.mat-checkbox-frame
+  border: 2px solid #b0bec5 !important
+label.mat-checkbox-layout
+  margin-right: 20px
+.subject
+  width: 305px

@@ -1,0 +1,98 @@
+<div class="">
+  <div class="page-header headerMargin row">
+    <div class="container flex">
+      <div class="page-title">
+        <h4>
+          Upload
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col justify-content-center">
+      <div class="">
+        <form >
+          <div class="modal-body">
+            <div class="drop-zone" [class.file-imported] = 'fileUploaded' (drop)="onDrop($event)"
+                 (dragover)="onDragOver($event)">
+
+              <i *ngIf="isFile()" class=" mdi mdi-file-excel mdi-124px" aria-hidden="true"></i>
+              <i  *ngIf="isFileUploadedError()" class="uploadIcon mdi mdi-alert mdi-124px" aria-hidden="true"></i>
+              <i *ngIf="isFileUploadedSuccess()" class="uploadIconSuccess mdi mdi-check mdi-124px" aria-hidden="true"></i>
+              <div class="clickHere">
+                <!--Browse Files-->
+                <span>
+           Browse Files
+         <input type="file" name="file" id="file" #fileInput
+                class="inputfile"
+                (change)="changeListener($event)"
+                accept=".csv"/>
+           <span (click)="fileInput.click()">
+           <input class="uploadedFile"
+                  #selectedFileName/>
+           </span>
+         </span>
+                <div class="row">
+                  <div *ngIf="isFile()" class="drop-zone-text">Select </div>
+                  <div *ngIf="isFileUploadedError()" class="drop-zone-text"> {{ errorData}} </div>
+                  <div *ngIf="isFileUploadedSuccess()" class="drop-zone-text">{{csvData }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-md-1">
+
+          </div>
+          <div class="col ml50">
+            <a  href='{{downloadSampleFile}}' download>
+             Download
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <button typed="button" [disabled]="isFile() || isFileUploadedError()"  class="button-center btn float-center button-style btn-primary mt-2"
+                    (click)="save()">
+              <span class="login-button-label">Save</span>
+              <i class="ml-2 mdi mdi-arrow-right mdi-24px"></i>
+            </button>
+          </div>
+        </div>
+        <div class="row col">
+          <div class="col justify-content-center error-list">
+            <div *ngIf="rowWiseError">
+              <ul *ngFor="let key of getKeys(rowWiseError)">
+                <ul>
+                  {{key}}
+                  <li *ngFor="let eachError of rowWiseError[key]">
+                    <span class="text-danger">{{eachError}}</span>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+            <!--<div class="col justify-content-center error-list">
+            <div *ngIf="errorData" class="">
+              <span class="text-danger">{{errorData}}</span>
+            </div>
+            </div>-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-3 justify-content-center">
+      <div class="">
+
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
+
+  </div>
+</div>

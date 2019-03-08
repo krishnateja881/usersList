@@ -1,0 +1,66 @@
+<div class="page-header row">
+  <div class="col-md-3 page-title" >
+    <h2>
+      Search
+    </h2>
+  </div>
+  <div class="col-md-9 list-filter">
+    <div class="row">
+      <div class="col-md-8 inputField padding-top-7px">
+        <input #myInput placeholder="Search Task" [(ngModel)]="name" (input)="filterItem(myInput.value)" style="width: 289px">
+      </div>
+      <div class="col-md-2">
+        <span class="mdi mdi-pencil-box-outline mdi-36px" [class.disabled]="!enteredText" (click)="save()"></span>
+      </div>
+      <div class="col-md-2">
+        <span class="mdi mdi-close-box-outline mdi-36px" (click)="remove()"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="btn-container">
+
+    </div>
+  </div>
+</div>
+<div class="row" >
+  <div class="col-md-3 p0 sidebar">
+    <div class="sidebar-container">
+
+      <div class="list-container" id="style-2">
+        <ul class="list-wrapper">
+          <div>
+            <span class=""></span>
+            <div class=" text-muted" *ngIf="isInputTextEnter">
+              <b></b> <span class=""> {{dateValue}}</span> <span class="pl5 pr5">|</span>
+              <b></b>{{info}}
+            </div>
+          </div>
+          <li class="list-item pointer" name="list"
+              *ngFor="let eachData of filteredItems;let i = index" (click)="getInfoData(eachData._id,i,eachData.emaillist[0].email)" [class.list-item-active]="currentSelectedId === eachData._id">
+            <span [innerHtml]="eachData.name"></span><span>|</span>Dob:<span  [innerHtml]="eachData.birthday | date:'dd/MM/yyyy'"></span>|Title:<span  [innerHtml]="eachData.title"></span>
+            <div class=" text-muted">
+              <b></b> <span class=""> {{eachData.emaillist[0].email}}</span> <span class="pl5 pr5">|</span>
+              <b></b>{{eachData.phonelist[0].num}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-9 viewContainer" *ngIf="selectedEmailId">
+
+    <div class="color-gray text-muted">
+      To: <span>{{selectedEmailId}}</span>
+    </div>
+    <div class="subject">
+     Subject: <input class="form-control"  id="exampleFormControlTextarea3" name="textData" [(ngModel)]="enteredText"  rows="4">
+
+    </div>
+    <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+
+  </div>
+</div>
+
